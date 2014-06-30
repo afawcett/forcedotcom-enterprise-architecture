@@ -5,9 +5,20 @@
     <description>A native Force.com application for tracking Formula1 racing!</description>
     <namespacePrefix>bookappaf</namespacePrefix>
     <types>
+        <members>RaceAnalytics</members>
+        <members>RaceManagement</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Contestant__c.DNF__c</members>
         <members>Contestant__c.Driver__c</members>
         <members>Contestant__c.Race__c</members>
+        <members>Driver__c.Active__c</members>
+        <members>Driver__c.Nationality__c</members>
+        <members>Race__c.Driver__c</members>
         <members>Race__c.Season__c</members>
+        <members>Race__c.TotalDNFs__c</members>
+        <members>Season__c.Year__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -18,11 +29,33 @@
         <name>CustomObject</name>
     </types>
     <types>
+        <members>Driver__c</members>
+        <members>Race__c</members>
+        <members>Season__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
         <members>Contestant__c-Contestant Layout</members>
         <members>Driver__c-Driver Layout</members>
         <members>Race__c-Race Layout</members>
         <members>Season__c-Season Layout</members>
         <name>Layout</name>
+    </types>
+    <types>
+        <members>Driver__c.All</members>
+        <members>Race__c.All</members>
+        <members>Season__c.All</members>
+        <name>ListView</name>
+    </types>
+    <types>
+        <members>FormulaForceRaceAnalytics</members>
+        <members>FormulaForceRaceManagement</members>
+        <members>FormulaForceRaceManagementUpdateDNFStatus</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>Contestant__c.OutOfRace</members>
+        <name>QuickAction</name>
     </types>
     <version>30.0</version>
 </Package>

@@ -51,7 +51,24 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
+    <fields>
+        <fullName>Year__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <defaultValue>TEXT(YEAR(TODAY()))</defaultValue>
+        <externalId>false</externalId>
+        <label>Year</label>
+        <length>4</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
     <label>Season</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
     <nameField>
         <label>Season Name</label>
         <type>Text</type>
