@@ -54,6 +54,7 @@
     <fields>
         <fullName>DNF__c</fullName>
         <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>DNF</label>
         <trackFeedHistory>false</trackFeedHistory>

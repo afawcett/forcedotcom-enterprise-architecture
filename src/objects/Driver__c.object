@@ -54,6 +54,7 @@
     <fields>
         <fullName>Active__c</fullName>
         <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Active</label>
         <trackFeedHistory>false</trackFeedHistory>
@@ -62,6 +63,7 @@
     </fields>
     <fields>
         <fullName>Nationality__c</fullName>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Nationality</label>
         <picklist>

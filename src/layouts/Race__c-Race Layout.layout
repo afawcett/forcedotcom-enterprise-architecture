@@ -20,7 +20,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Driver__c</field>
+                <field>FastestLapBy__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>

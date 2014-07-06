@@ -55,6 +55,7 @@
         <fullName>Year__c</fullName>
         <caseSensitive>false</caseSensitive>
         <defaultValue>TEXT(YEAR(TODAY()))</defaultValue>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Year</label>
         <length>4</length>

@@ -30,7 +30,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Race__c.Driver__c</field>
+        <field>Race__c.FastestLapBy__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -93,19 +93,7 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
-        <name>ActivateOrder</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>AllowDeleteDandBCompany</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
         <name>AllowEmailIC</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>AllowReadDandBCompany</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
@@ -230,10 +218,6 @@
     <userPermissions>
         <enabled>false</enabled>
         <name>DistributeFromPersWksp</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>EditActivatedOrders</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
@@ -534,6 +518,10 @@
     <userPermissions>
         <enabled>false</enabled>
         <name>ViewAllUsers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>ViewCaseInteraction</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
