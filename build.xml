@@ -30,5 +30,13 @@
         	retrieveTarget="${basedir}/src"  
         	packageNames="FormulaForce"/>  
 	</target> 
+	
+	<!-- Deploy -->
+	<target name="deploy">
+    	<sf:deploy  
+        	username="${sf.username}"  
+        	password="${sf.password}"  
+        	deployRoot="${basedir}/src"/>  		
+	</target>
 		
 </project>
