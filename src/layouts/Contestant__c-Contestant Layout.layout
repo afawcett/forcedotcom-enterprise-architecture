@@ -73,7 +73,7 @@
             <quickActionName>FeedItem.PollPost</quickActionName>
         </quickActionListItems>
         <quickActionListItems>
-            <quickActionName>bookappaf__Contestant__c.OutOfRace</quickActionName>
+            <quickActionName>Contestant__c.OutOfRace</quickActionName>
         </quickActionListItems>
     </quickActionList>
     <showEmailCheckbox>false</showEmailCheckbox>

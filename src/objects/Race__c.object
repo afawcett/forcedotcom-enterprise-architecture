@@ -52,10 +52,11 @@
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
     <fields>
-        <fullName>Driver__c</fullName>
+        <fullName>FastestLapBy__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Driver</label>
+        <label>Fastest Lap By</label>
         <referenceTo>Driver__c</referenceTo>
         <relationshipLabel>Races</relationshipLabel>
         <relationshipName>FastestLaps</relationshipName>
@@ -81,6 +82,7 @@
     </fields>
     <fields>
         <fullName>TotalDNFs__c</fullName>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Total DNFs</label>
         <summaryFilterItems>

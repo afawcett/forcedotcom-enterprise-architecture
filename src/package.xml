@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>FormulaForce</fullName>
-    <apiAccessLevel>Unrestricted</apiAccessLevel>
-    <description>A native Force.com application for tracking Formula1 racing!</description>
-    <namespacePrefix>bookappaf</namespacePrefix>
     <types>
         <members>RaceAnalytics</members>
         <members>RaceManagement</members>
@@ -15,7 +11,7 @@
         <members>Contestant__c.Race__c</members>
         <members>Driver__c.Active__c</members>
         <members>Driver__c.Nationality__c</members>
-        <members>Race__c.Driver__c</members>
+        <members>Race__c.FastestLapBy__c</members>
         <members>Race__c.Season__c</members>
         <members>Race__c.TotalDNFs__c</members>
         <members>Season__c.Year__c</members>
