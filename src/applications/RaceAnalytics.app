@@ -4,4 +4,5 @@
     <label>Race Analytics</label>
     <tab>standard-report</tab>
     <tab>Race__c</tab>
+    <tab>RaceData__c</tab>
 </CustomApplication>

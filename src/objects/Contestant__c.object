@@ -87,6 +87,42 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Qualification1LapTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Qualification 1 Lap Time</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Qualification2LapTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Qualification 2 Lap Time</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Qualification3LapTime__c</fullName>
+        <externalId>false</externalId>
+        <label>Qualification 3 Lap Time</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Race__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
