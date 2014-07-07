@@ -21,6 +21,9 @@
         <members>Race__c.Season__c</members>
         <members>Race__c.TotalDNFs__c</members>
         <members>Season__c.Year__c</members>
+        <members>TrackLapRecords__c.DriverName_c__c</members>
+        <members>TrackLapRecords__c.Time__c</members>
+        <members>TrackLapRecords__c.Year__c</members>
         <name>CustomField</name>
     </types>
     <types>
@@ -29,6 +32,7 @@
         <members>RaceData__c</members>
         <members>Race__c</members>
         <members>Season__c</members>
+        <members>TrackLapRecords__c</members>
         <name>CustomObject</name>
     </types>
     <types>
