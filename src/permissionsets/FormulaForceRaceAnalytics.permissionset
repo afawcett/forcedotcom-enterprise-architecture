@@ -8,6 +8,62 @@
         <application>RaceManagement</application>
         <visible>false</visible>
     </applicationVisibilities>
+    <classAccesses>
+        <apexClass>ContestantController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ContestantControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ContestantService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ContestantServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RaceController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RaceControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RaceService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>RaceServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SeasonController</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SeasonControllerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SeasonNewsletterScheduler</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SeasonNewsletterSchedulerTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SeasonService</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SeasonServiceTest</apexClass>
+        <enabled>false</enabled>
+    </classAccesses>
     <fieldPermissions>
         <editable>false</editable>
         <field>Contestant__c.DNF__c</field>
@@ -118,7 +174,19 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
+        <name>ActivateOrder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AllowDeleteDandBCompany</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
         <name>AllowEmailIC</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>AllowReadDandBCompany</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
@@ -243,6 +311,10 @@
     <userPermissions>
         <enabled>false</enabled>
         <name>DistributeFromPersWksp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>EditActivatedOrders</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
@@ -543,10 +615,6 @@
     <userPermissions>
         <enabled>false</enabled>
         <name>ViewAllUsers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>ViewCaseInteraction</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>

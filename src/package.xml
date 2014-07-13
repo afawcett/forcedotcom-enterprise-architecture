@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>ContestantController</members>
+        <members>ContestantControllerTest</members>
+        <members>ContestantService</members>
+        <members>ContestantServiceTest</members>
+        <members>RaceController</members>
+        <members>RaceControllerTest</members>
+        <members>RaceService</members>
+        <members>RaceServiceTest</members>
+        <members>SeasonController</members>
+        <members>SeasonControllerTest</members>
+        <members>SeasonNewsletterScheduler</members>
+        <members>SeasonNewsletterSchedulerTest</members>
+        <members>SeasonService</members>
+        <members>SeasonServiceTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
         <members>RaceAnalytics</members>
         <members>RaceManagement</members>
         <name>CustomApplication</name>
