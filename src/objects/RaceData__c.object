@@ -46,6 +46,7 @@
     </actionOverrides>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
     <enableActivities>false</enableActivities>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -53,6 +54,7 @@
     <fields>
         <fullName>Race__c</fullName>
         <deleteConstraint>Restrict</deleteConstraint>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Race</label>
         <referenceTo>Race__c</referenceTo>

@@ -52,6 +52,14 @@
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
     <fields>
+        <fullName>Current__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Current</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Year__c</fullName>
         <caseSensitive>false</caseSensitive>
         <defaultValue>TEXT(YEAR(TODAY()))</defaultValue>

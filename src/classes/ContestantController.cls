@@ -1,13 +1,21 @@
 public with sharing class ContestantController 
 {
-    public ContestantController(ApexPages.StandardController stdController) 
+	private ApexPages.StandardController standardController;
+
+    public ContestantController(ApexPages.StandardController standardController) 
     {
+    	this.standardController = standardController;
     }
 
     public PageReference awardPoints()
     {
-        ContestantService.awardChampionshipPoints(null);
-        
+    	try {
+        	ContestantService.awardChampionshipPoints(
+        		new Set<Id> { standardController.getId() });
+        }
+        catch (Exception e) {
+        	ApexPages.addMessages(e);
+        }        
         return null;
     }
 }
