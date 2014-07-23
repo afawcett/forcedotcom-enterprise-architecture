@@ -185,8 +185,9 @@ public virtual with sharing class fflib_SObjectDomain
     {    	
     	if(Configuration.EnforcingTriggerCRUDSecurity && !SObjectDescribe.isUpdateable()) 			    		
     	   throw new DomainException('Permission to udpate an ' + SObjectDescribe.getName() + ' denied.');
-    	   
-    	onValidate();
+    	
+    	if(Configuration.OldOnUpdateValidateBehaviour)
+    		onValidate();
     	onValidate(existingRecords);
     	onAfterUpdate(existingRecords); 
     }
@@ -322,6 +323,10 @@ public virtual with sharing class fflib_SObjectDomain
 	 **/
 	public class Configuration
 	{
+		/** 
+		 * Backwards compatability mode for handleAfterUpdate routing to onValidate()
+		 **/
+		public Boolean OldOnUpdateValidateBehaviour {get; private set;}		
 		/**
 		 * True if the base class is checking the users CRUD requirements before invoking trigger methods
 		 **/ 
@@ -339,6 +344,7 @@ public virtual with sharing class fflib_SObjectDomain
 		{
 			EnforcingTriggerCRUDSecurity = true; // Default is true for backwards compatability
 			TriggerStateEnabled = false;
+			OldOnUpdateValidateBehaviour = false; // Breaking change, but felt to better practice
 		}
 		
 		/**
@@ -374,6 +380,24 @@ public virtual with sharing class fflib_SObjectDomain
 		public Configuration disableTriggerCRUDSecurity()
 		{
 			EnforcingTriggerCRUDSecurity = false;
+			return this;
+		}
+
+		/**
+		 * See associated property
+		 **/
+		public Configuration enableOldOnUpdateValidateBehaviour()
+		{
+			OldOnUpdateValidateBehaviour = true;
+			return this;
+		}
+
+		/**
+		 * See associated property
+		 **/
+		public Configuration disableOldOnUpdateValidateBehaviour()
+		{
+			OldOnUpdateValidateBehaviour = false;
 			return this;
 		}
 	}

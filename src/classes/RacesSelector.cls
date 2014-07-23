@@ -4,13 +4,19 @@ public class RacesSelector extends fflib_SObjectSelector
 	{
 		return new List<Schema.SObjectField> {
 			Race__c.Id,
-			Race__c.Name
+			Race__c.Name,
+			Race__c.Status__c
 		};
 	}
 
 	public Schema.SObjectType getSObjectType()
 	{
 		return Race__c.sObjectType;
+	}
+
+	public List<Race__c> selectById(Set<Id> raceIds)
+	{
+		return (List<Race__c>) selectSObjectsById(raceIds);
 	}
 
 	public List<Race__c> selectByIdWithContestants(Set<Id> raceIds)

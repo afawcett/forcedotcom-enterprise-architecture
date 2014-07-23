@@ -52,38 +52,39 @@
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
     <fields>
-        <fullName>Current__c</fullName>
-        <defaultValue>false</defaultValue>
+        <fullName>TestingDistance__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
-        <label>Current</label>
+        <label>Testing Distance</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
         <trackTrending>false</trackTrending>
-        <type>Checkbox</type>
+        <type>Number</type>
+        <unique>false</unique>
     </fields>
-    <fields>
-        <fullName>Year__c</fullName>
-        <caseSensitive>false</caseSensitive>
-        <defaultValue>TEXT(YEAR(TODAY()))</defaultValue>
-        <deprecated>false</deprecated>
-        <externalId>true</externalId>
-        <label>Year</label>
-        <length>4</length>
-        <required>true</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <label>Season</label>
+    <label>Team</label>
     <listViews>
         <fullName>All</fullName>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
     <nameField>
-        <label>Season Name</label>
+        <label>Team Name</label>
         <type>Text</type>
     </nameField>
-    <pluralLabel>Seasons</pluralLabel>
+    <pluralLabel>Teams</pluralLabel>
     <searchLayouts/>
     <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>VerifyCompliance</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Verify Compliance</masterLabel>
+        <openType>sidebar</openType>
+        <page>complianceteam</page>
+        <protected>false</protected>
+    </webLinks>
 </CustomObject>

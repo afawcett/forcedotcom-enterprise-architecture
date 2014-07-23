@@ -85,8 +85,8 @@ public class RaceService
 			for(Race__c race : new RacesSelector().selectByIdWithContestants(raceIds))
 				contestants.addAll(race.Contestants__r);
 
-			// Delegate to contestant service
-			ContestantService.awardChampionshipPoints(uow, contestants);
+			// Delegate to Contestant Domain class
+			new Contestants(contestants).awardChampionshipPoints(uow);
 
 			// Commit work
 			uow.commitWork();

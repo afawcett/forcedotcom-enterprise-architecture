@@ -5,6 +5,7 @@
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>PointsAwarded__c</fullName>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Points Awarded</label>
         <precision>2</precision>

@@ -4,27 +4,13 @@ public class ContestantService
 	{
 		ApplicationUnitOfWork uow = new ApplicationUnitOfWork();
 
-		// Apply championship points to selected contestants		
-		awardChampionshipPoints(uow, new ContestantsSelector().selectById(contestantIds));
+		// Apply championship points to given contestants		
+		Contestants contestants = 
+			new Contestants(
+				new ContestantsSelector().selectById(contestantIds));
+		contestants.awardChampionshipPoints(uow);
 
 		uow.commitWork();
-	}
-
-	public static void awardChampionshipPoints(fflib_SObjectUnitOfWork uow, List<Contestant__c> contestants)
-	{
-		// Apply championship points to given contestants		
-		for(Contestant__c contestant : contestants)
-		{
-			// Determine points to award for the given position
-			ChampionshipPoints__c pointsForPosition = 
-				ChampionshipPoints__c.getInstance(String.valueOf(contestant.RacePosition__c));
-			if(pointsForPosition!=null)
-			{
-				// Apply points and register for udpate with uow
-				contestant.ChampionshipPoints__c = pointsForPosition.PointsAwarded__c;
-				uow.registerDirty(contestant);
-			}
-		}		
 	}
 
 	public static void retireFromRace(List<RaceRetirement> retirements)
