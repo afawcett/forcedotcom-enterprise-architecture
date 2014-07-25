@@ -84,7 +84,7 @@ private class ContestantsTest
 
 		Test.startTest();
 		Contestants contestants = new Contestants(new List<Contestant__c> { contestant });
-		contestants.awardChampionshipPoints(new ApplicationUnitOfWork());
+		contestants.awardChampionshipPoints(Application.UnitOfWork.newInstance());
 		System.assertEquals(25, ((Contestant__c) contestants.Records[0]).ChampionshipPoints__c);
 		Test.stopTest();
 	}

@@ -2,7 +2,6 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
         <members>Application</members>
-        <members>ApplicationUnitOfWork</members>
         <members>Cars</members>
         <members>CarsSelector</members>
         <members>ComplianceController</members>

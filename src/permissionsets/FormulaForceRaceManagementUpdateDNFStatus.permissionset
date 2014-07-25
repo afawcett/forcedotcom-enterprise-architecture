@@ -13,10 +13,6 @@
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>
-        <apexClass>ApplicationUnitOfWork</apexClass>
-        <enabled>false</enabled>
-    </classAccesses>
-    <classAccesses>
         <apexClass>Cars</apexClass>
         <enabled>false</enabled>
     </classAccesses>

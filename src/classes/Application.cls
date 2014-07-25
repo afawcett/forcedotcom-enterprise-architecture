@@ -1,5 +1,14 @@
 public class Application 
 {
+	// Configure and create the UnitOfWorkFactory for this Application
+	public static final UnitOfWorkFactory UnitOfWork = 
+		new UnitOfWorkFactory(
+				new List<SObjectType> { 
+					Driver__c.SObjectType, 
+					Season__c.SObjectType, 
+				  	Race__c.SObjectType, 
+				  	Contestant__c.SObjectType });	
+
 	// Configure and create the DomainFactory for this Application
 	public static final DomainFactory Domain = 
 		new DomainFactory(
@@ -17,6 +26,24 @@ public class Application
 					Car__c.SObjectType => CarsSelector.class,
 					Driver__c.SObjectType => DriversSelector.class,
 					Contestant__c.SObjectType => ContestantsSelector.class });
+
+	/**
+	 * Class implements a Unit of Work factory
+	 **/
+	public class UnitOfWorkFactory
+	{
+		private List<SObjectType> objectTypes;
+
+		private UnitOfWorkFactory(List<SObjectType> objectTypes)
+		{
+			this.objectTypes = objectTypes;
+		}
+
+		public fflib_SObjectUnitOfWork newInstance()
+		{
+			return new fflib_SObjectUnitOfWork(objectTypes);
+		}
+	}
 
 	/**
 	 * Class implements a Domain class factory
