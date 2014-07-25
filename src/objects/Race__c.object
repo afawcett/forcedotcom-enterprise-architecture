@@ -51,6 +51,11 @@
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
+    <fieldSets>
+        <fullName>SeasonOverview</fullName>
+        <description>Used by the Season Overview page</description>
+        <label>Season Overview</label>
+    </fieldSets>
     <fields>
         <fullName>FastestLapBy__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>

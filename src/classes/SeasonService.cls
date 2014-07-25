@@ -28,7 +28,7 @@ public class SeasonService
 			(SeasonsData) JSON.deserializeStrict(jsonData, SeasonService.SeasonsData.class);
 
 		// Construct a Unit Of Work to capture the follow working
-		ApplicationUnitOfWork uow = new ApplicationUnitOfWork();
+		fflib_SObjectUnitOfWork uow = Application.UnitOfWork.newInstance();
 		// Create Driver__c records
 		Map<String, Driver__c> driversById = new Map<String, Driver__c>();
 		for(DriverData driverData : seasonsData.drivers)

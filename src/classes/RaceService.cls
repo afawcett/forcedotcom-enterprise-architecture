@@ -72,13 +72,13 @@ public class RaceService
 
 		public void applyRaceResults_x(Map<Id, List<ProvisionalResult>> provisionalResultsByRaceId)
 		{
-			ApplicationUnitOfWork uow = new ApplicationUnitOfWork();
+			fflib_SObjectUnitOfWork uow = Application.UnitOfWork.newInstance();
 			uow.commitWork();
 		}
 
 		public void awardChampionshipPoints_x(Set<Id> raceIds)
 		{
-			ApplicationUnitOfWork uow = new ApplicationUnitOfWork();
+			fflib_SObjectUnitOfWork uow = Application.UnitOfWork.newInstance();
 
 			// Query Races and contestants and bulkify list of all contestants
 			List<Contestant__c> contestants = new List<Contestant__c>();

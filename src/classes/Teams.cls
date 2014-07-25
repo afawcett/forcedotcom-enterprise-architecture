@@ -16,7 +16,7 @@ public class Teams extends fflib_SObjectDomain
 			new List<ComplianceService.VerifyResult>();
 		for(Team__c team : (List<Team__c>) Records)
 		{
-			// Check testing distance compliance
+			// Check weight compliance
 			ComplianceService.VerifyResult testingDistance = new ComplianceService.VerifyResult();
 			testingDistance.ComplianceCode = '22.5';
 			testingDistance.RecordId = team.Id;
@@ -28,7 +28,7 @@ public class Teams extends fflib_SObjectDomain
 		// Verify associated Drivers compliance
 		teamVerifyResults.addAll(
 			new Drivers(
-				new DriversSelector().selectDriversByTeam(
+				new DriversSelector().selectByTeam(
 					new Map<Id, SObject>(Records).keySet())).verifyCompliance());
 
 		return teamVerifyResults;		

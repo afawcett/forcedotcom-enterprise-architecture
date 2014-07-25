@@ -15,7 +15,12 @@ public class DriversSelector extends fflib_SObjectSelector
 		return Driver__c.sObjectType;
 	}
 
-	public List<Driver__c> selectDriversByTeam(Set<Id> teamIds)
+	public List<Driver__c> selectById(Set<Id> ids)
+	{
+		return (List<Driver__c>) super.selectSObjectsById(ids);
+	}
+
+	public List<Driver__c> selectByTeam(Set<Id> teamIds)
 	{
 		assertIsAccessible();
 		return Database.query(

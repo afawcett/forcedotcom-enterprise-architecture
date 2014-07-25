@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FormulaForce</fullName>
+    <apiAccessLevel>Unrestricted</apiAccessLevel>
+    <namespacePrefix>andybook2</namespacePrefix>
     <types>
         <members>Application</members>
         <members>ApplicationUnitOfWork</members>
@@ -21,6 +24,8 @@
         <members>RaceControllerTest</members>
         <members>RaceService</members>
         <members>RaceServiceTest</members>
+        <members>RaceSummaryController</members>
+        <members>RaceSummaryControllerTest</members>
         <members>Races</members>
         <members>RacesSelector</members>
         <members>SeasonController</members>
@@ -137,6 +142,10 @@
         <members>Season__c</members>
         <members>Team__c</members>
         <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Race__c.SeasonOverview</members>
+        <name>FieldSet</name>
     </types>
     <types>
         <members>Car__c-Car Layout</members>

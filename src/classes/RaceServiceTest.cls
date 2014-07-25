@@ -20,11 +20,6 @@ private class RaceServiceTest
 		dummyPage.getParameters().put('dummy', 'true');
 		Test.setCurrentPage(dummyPage);
 		RaceService.calculateProvisionResults(new Set<Id> { 'a01b0000005lmgk' });
-		try {
-			RaceService.applyRaceResults(null);
-			System.assert(false);
-		} catch (Exception e) {
-			System.assertEquals('Not implemented', e.getMessage());
-		}
+		RaceService.applyRaceResults(null);
 	}
 }
