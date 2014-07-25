@@ -9,7 +9,7 @@
         <visible>false</visible>
     </applicationVisibilities>
     <classAccesses>
-        <apexClass>ApplicationUnitOfWork</apexClass>
+        <apexClass>Application</apexClass>
         <enabled>false</enabled>
     </classAccesses>
     <classAccesses>

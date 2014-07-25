@@ -2,7 +2,7 @@ public class ContestantService
 {
 	public static void awardChampionshipPoints(Set<Id> contestantIds)
 	{
-		ApplicationUnitOfWork uow = new ApplicationUnitOfWork();
+		fflib_SObjectUnitOfWork uow = Application.UnitOfWork.newInstance();
 
 		// Apply championship points to selected contestants		
 		awardChampionshipPoints(uow, new ContestantsSelector().selectById(contestantIds));
