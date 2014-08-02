@@ -32,4 +32,31 @@ public class TestData
 					'}' +
 				']' +
 			'}';
+
+	public static void createVolumeDataForViewStateTest()
+	{
+		// Create a big race!
+		List<Driver__c> drivers = new List<Driver__c>();
+		for(Integer driverIdx = 0; driverIdx < 50; driverIdx++)
+			drivers.add(
+				new Driver__c(
+					Name = 'Driver #' + driverIdx, 
+					DriverId__c = '#' + driverIdx,
+					TwitterHandle__c = 'twitter' + driverIdx));
+
+		// Create records
+		fflib_SObjectUnitOfWork uow = Application.UnitOfWork.newInstance();
+		Season__c season = new Season__c(Name = 'Volume Test', Year__c = '2015');
+		Race__c race = new Race__c(Name = 'Volume Race');
+		uow.registerNew(season);
+		uow.registerNew(race, Race__c.Season__c, season);
+		for(Driver__c driver : drivers)
+		{
+			uow.registerNew(driver);
+			Contestant__c contestant = new Contestant__c();
+			uow.registerNew(contestant, Contestant__c.Race__c, race);
+			uow.registerRelationship(contestant, Contestant__c.Driver__c, driver);
+		}
+		uow.commitWork();
+	}
 }

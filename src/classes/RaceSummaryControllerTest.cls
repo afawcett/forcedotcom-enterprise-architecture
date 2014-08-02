@@ -1,7 +1,9 @@
 @IsTest
 private class RaceSummaryControllerTest 
 {
-	private static Id TEST_RACE_ID = 'a01b0000005lmgk';
+	// Constructs a fake Id compatible with the Race__c in the current org
+	private static Id TEST_RACE_ID = 
+		Race__c.SObjectType.getDescribe().getKeyPrefix()+'000000000001';
 
 	@IsTest
 	private static void testLoadSummaries()

@@ -153,4 +153,15 @@
     <pluralLabel>Races</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>DownloadSummary</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Download Summary</masterLabel>
+        <openType>sidebar</openType>
+        <page>racesummaryascsv</page>
+        <protected>false</protected>
+    </webLinks>
 </CustomObject>

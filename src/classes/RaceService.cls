@@ -15,6 +15,11 @@ public class RaceService
 		service().awardChampionshipPoints_x(raceIds);
 	}
 
+	public static String generateSummaryAsCSV(Set<Id> raceIds)
+	{
+		return service().generateSummaryAsCSV_x(raceIds);
+	}
+
 	private static IRaceService service()
 	{
 		if(ApexPages.currentPage()!=null)
@@ -30,6 +35,8 @@ public class RaceService
 		void applyRaceResults_x(Map<Id, List<ProvisionalResult>> provisionalResultsByRaceId);
 
 		void awardChampionshipPoints_x(Set<Id> raceIds);
+
+		String generateSummaryAsCSV_x(Set<Id> raceIds);
 	}	
 
 	private class DummyImplementation implements IRaceService
@@ -54,12 +61,15 @@ public class RaceService
 
 		public void applyRaceResults_x(Map<Id, List<ProvisionalResult>> provisionalResultsByRaceId)
 		{
-			throw new RaceServiceException('Not implemented');
 		}
 
 		public void awardChampionshipPoints_x(Set<Id> raceIds)
 		{
-			throw new RaceServiceException('Not implemented');
+		}
+
+		public String generateSummaryAsCSV_x(Set<Id> raceIds)
+		{
+			return null;
 		}
 	}
 
@@ -91,9 +101,28 @@ public class RaceService
 			// Commit work
 			uow.commitWork();
 		}
-	}
 
-	public class RaceServiceException extends Exception {} 	
+		public String generateSummaryAsCSV_x(Set<Id> raceIds)
+		{
+			// Query summaries via custom selector method
+			Map<Id, List<ContestantsSelector.Summary>> summariesByRaceId = 
+				new ContestantsSelector().selectByRaceIdWithContestantSummary(raceIds);
+			// Construct CSV output (note this is not a formal implementation of the CSV spec)
+			String csvOutput = '';
+			for(Id raceId : summariesByRaceId.keySet())
+				for(ContestantsSelector.Summary raceContestantSummary : summariesByRaceId.get(raceId))
+					csvOutput+= String.join(
+						new Object[] { 
+								raceContestantSummary.Season,
+								raceContestantSummary.Race,
+								raceContestantSummary.Position,
+								raceContestantSummary.Driver,
+								raceContestantSummary.Team,
+								raceContestantSummary.Car
+							} , ',') + '\r\n';
+			return csvOutput;
+		}		
+	}
 
 	public class ProvisionalResult
 	{

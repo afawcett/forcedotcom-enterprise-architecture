@@ -20,7 +20,8 @@ public virtual class ContestantsSelector extends fflib_SObjectSelector
 			Contestant__c.Qualification3LapTime__c,
 			Contestant__c.Race__c,
 			Contestant__c.RacePosition__c,
-			Contestant__c.RaceTime__c 
+			Contestant__c.RaceTime__c,
+			Contestant__c.RetirementReason__c
 		};
 	}
 

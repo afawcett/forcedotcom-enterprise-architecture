@@ -22,4 +22,12 @@ private class RaceServiceTest
 		RaceService.calculateProvisionResults(new Set<Id> { 'a01b0000005lmgk' });
 		RaceService.applyRaceResults(null);
 	}
+
+	@isTest static void testCSV()
+	{
+		SeasonService.importSeasons(TestData.SEASONSDATA);
+		String csvOutput = RaceService.generateSummaryAsCSV(
+			new Map<Id, SObject>([select Id from Race__c]).keySet());
+		System.assertEquals('2013,Spain,,Lewis Hamilton,,\r\n', csvOutput);		
+	}
 }
