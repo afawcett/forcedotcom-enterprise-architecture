@@ -1,4 +1,4 @@
-public class ContestantService 
+global class ContestantService 
 {
 	public static void awardChampionshipPoints(Set<Id> contestantIds)
 	{
@@ -25,4 +25,9 @@ public class ContestantService
 		public Id contestantId;
 		public String reason;
 	}	
+
+	global interface IAwardChampionshipPoints
+	{
+		void calculate(List<Contestant__c> contestants);
+	}
 }

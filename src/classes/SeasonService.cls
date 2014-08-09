@@ -1,26 +1,30 @@
-public class SeasonService 
+global class SeasonService 
 {
 	public static void issueNewsLetterCurrentSeason()
 	{
-		throw new SeasonServiceException('Not implemented');
+		throw new SeasonServiceException(
+			Application.ExceptionCode.NotImplemented, Label.NotImplemented);
 	}
 	
 	public static void issueNewsLetters(Set<Id> seasonIds)
 	{
-		throw new SeasonServiceException('Not implemented');		
+		throw new SeasonServiceException(
+			Application.ExceptionCode.NotImplemented, Label.NotImplemented);
 	}
 
 	public static void updateStandings(Set<Id> seasonIds)
 	{
-		throw new SeasonServiceException('Not implemented');
+		throw new SeasonServiceException(
+			Application.ExceptionCode.NotImplemented, Label.NotImplemented);
 	}
 
 	public static void updateStandings(List<UpdateStandings> updateStandings)
 	{
-		throw new SeasonServiceException('Not implemented');
+		throw new SeasonServiceException(
+			Application.ExceptionCode.NotImplemented, Label.NotImplemented);
 	}
-	
-	public static void importSeasons(String jsonData) 
+
+	global static void importSeasons(String jsonData) 
 	{
 		// Parse JSON data
 		System.debug(jsonData);
@@ -38,6 +42,8 @@ public class SeasonService
 				DriverId__c = driverData.driverId,
 				Nationality__c = driverData.nationality,
 				TwitterHandle__c = driverData.twitterHandle);
+			if(driverData.fiaSuperLicense!=null)
+				driver.FIASuperLicense__c = driverData.fiaSuperLicense;
 			uow.registerNew(driver);
 			driversById.put(driver.DriverId__c, driver);
 		}
@@ -72,14 +78,24 @@ public class SeasonService
 		// Insert records registered with uow above
 		uow.commitWork();
 	}	
+	
+	global static void createTestSeason()
+	{
+		importSeasons(TestData.asJSON());		
+	}
 
-	public class SeasonServiceException extends Exception {} 
+	global class SeasonServiceException extends Application.ApplicationException 
+	{
+		public SeasonServiceException(Application.ExceptionCode exceptionCode, String message)
+		{
+			super(exceptionCode, message);
+		}
+	} 
 
 	public class UpdateStandings
 	{
 		public Id seasonId;
 		public Boolean issueNewsLetter;
-
 	}
 
 	public class SeasonsData
@@ -93,7 +109,8 @@ public class SeasonService
 		public String name;
 		public String nationality;
 		public String driverId;		
-		public String twitterHandle;		
+		public String twitterHandle;
+		public Boolean fiaSuperLicense;		
 
 	}
 

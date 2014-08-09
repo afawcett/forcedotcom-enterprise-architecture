@@ -3,7 +3,7 @@ private class ContestantServiceTest
 {	
 	@isTest static void testAwardPoints() 
 	{
-		SeasonService.importSeasons(TestData.SEASONSDATA);
+		SeasonService.importSeasons(TestData.asJSON());
 		insert new ChampionshipPoints__c(Name = '1', PointsAwarded__c = 25);			
 		ContestantService.awardChampionshipPoints(
 			new Map<Id, SObject>([select Id from Contestant__c]).keySet());

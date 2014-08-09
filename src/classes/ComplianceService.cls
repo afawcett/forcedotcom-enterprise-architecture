@@ -1,15 +1,34 @@
-public class ComplianceService 
+global class ComplianceService 
 {		
 	/**
-	 * Provides general support to verify compliance in the application
+	 * Provides a full report, including confirmation and failures of the given reocrds
 	 **/
-	public static void verify(Set<Id> recordIds)
+	global static List<VerifyResult> report(Set<Id> recordIds)
 	{
 		// Dynamically create the Domain class instance for these records
 		fflib_SObjectDomain domain = Application.Domain.newInstance(recordIds);
 		if(domain instanceof ICompliant)
 		{
-			// Ask the domain class to very its compliance
+			// Ask the domain class to verify its compliance
+			ICompliant compliantDomain = (ICompliant) domain;
+			return compliantDomain.verifyCompliance();
+		}
+		throw new ComplianceException(
+			Application.ExceptionCode.UnableToVerifyCompliance,
+			Label.UnableToVerifyCompliance, 
+			null);		
+	}
+
+	/**
+	 * Provides general support to verify compliance in the application
+	 **/
+	global static void verify(Set<Id> recordIds)
+	{
+		// Dynamically create the Domain class instance for these records
+		fflib_SObjectDomain domain = Application.Domain.newInstance(recordIds);
+		if(domain instanceof ICompliant)
+		{
+			// Ask the domain class to verify its compliance
 			ICompliant compliantDomain = (ICompliant) domain;
 			List<VerifyResult> verifyResults = compliantDomain.verifyCompliance();
 			if(verifyResults!=null)
@@ -21,26 +40,31 @@ public class ComplianceService
 						failedCompliances.add(verifyResult);
 				if(failedCompliances.size()>0)
 					throw new ComplianceException(
-						'Compliance failures found.', failedCompliances);
+						Application.ExceptionCode.ComplianceFailure, 
+						Label.ComplianceFailuresFound, 
+						failedCompliances);
 			}
 			return;
 		}
-		throw new ComplianceException('Unable to verify compliance.', null);
+		throw new ComplianceException(
+			Application.ExceptionCode.UnableToVerifyCompliance,
+			Label.UnableToVerifyCompliance, 
+			null);
 	}
 
 	/**
 	 * Custom exception class providing details of the compliance failures
 	 **/
-	public class ComplianceException extends Exception
+	global class ComplianceException extends Application.ApplicationException
 	{
-		public List<VerifyResult> failures {get; private set;}
+		global List<VerifyResult> failures {get; private set;}
 
-		public ComplianceException(String message, List<VerifyResult> failures)
+		public ComplianceException(Application.ExceptionCode exceptionCode, String message, List<VerifyResult> failures)
 		{
-			this(message);
+			super(exceptionCode, message);
 			this.failures = failures;
 		}	
-	}
+	} 
 
 	/** 
 	 * Interface used to execute compliance checking logic in each domain class
@@ -53,11 +77,11 @@ public class ComplianceService
 	/**
 	 * Results of a compliance verification for a given record
 	 **/
-	public class VerifyResult
+	global class VerifyResult
 	{
-		public Id recordId;
-		public String complianceCode;
-		public Boolean passed;
-		public String failureReason;
+		global Id recordId;
+		global String complianceCode;
+		global Boolean passed;
+		global String failureReason;
 	}		
 }

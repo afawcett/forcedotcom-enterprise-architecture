@@ -1,4 +1,4 @@
-public class Application 
+global class Application 
 {
 	// Configure and create the UnitOfWorkFactory for this Application
 	public static final UnitOfWorkFactory UnitOfWork = 
@@ -129,5 +129,21 @@ public class Application
 		}		
 	}
 
-	public class ApplicationException extends Exception { }
+	global enum ExceptionCode
+	{
+		NotImplemented,
+		ComplianceFailure,
+		UnableToVerifyCompliance
+	}		
+
+	global virtual class ApplicationException extends Exception 
+	{
+		global ExceptionCode ExceptionCode {get; private set;}
+
+		public ApplicationException(ExceptionCode exceptionCode, String message)
+		{
+			this(message);
+			this.exceptionCode = exceptionCode;
+		}
+	}	
 }

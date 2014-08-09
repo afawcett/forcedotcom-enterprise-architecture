@@ -9,6 +9,8 @@
         <members>Cars</members>
         <members>CarsSelector</members>
         <members>ComplianceController</members>
+        <members>ComplianceResource</members>
+        <members>ComplianceResource_v1_0</members>
         <members>ComplianceService</members>
         <members>ComplianceServiceTest</members>
         <members>ContestantController</members>
@@ -80,6 +82,7 @@
         <name>CustomApplication</name>
     </types>
     <types>
+        <members>Application__c.IAwardChampionshipPointsApexClass__c</members>
         <members>Car__c.Weight__c</members>
         <members>ChampionshipPoints__c.PointsAwarded__c</members>
         <members>Contestant__c.Car__c</members>
@@ -117,6 +120,9 @@
         <name>CustomField</name>
     </types>
     <types>
+        <members>ComplianceFailuresFound</members>
+        <members>NotImplemented</members>
+        <members>UnableToVerifyCompliance</members>
         <members>fflib_security_error_field_not_insertable</members>
         <members>fflib_security_error_field_not_readable</members>
         <members>fflib_security_error_field_not_updateable</members>
@@ -131,6 +137,7 @@
         <name>CustomLabels</name>
     </types>
     <types>
+        <members>Application__c</members>
         <members>Car__c</members>
         <members>ChampionshipPoints__c</members>
         <members>Contestant__c</members>
