@@ -1,12 +1,18 @@
 public class DriversSelector extends fflib_SObjectSelector
 {
+	public static DriversSelector newInstance() 
+	{ 
+		return (DriversSelector) Application.Selector.newInstance(Driver__c.SObjectType); 
+	}
+    
 	public List<Schema.SObjectField> getSObjectFieldList()
 	{
 		return new List<Schema.SObjectField> {
 			Driver__c.Id,
 			Driver__c.Name,
 			Driver__c.FIASuperLicense__c,
-			Driver__c.Team__c
+			Driver__c.Team__c,
+            Driver__c.DriverId__c
 		};
 	}
 

@@ -178,6 +178,18 @@
         <unique>false</unique>
     </fields>
     <fields>
+        <fullName>RaceDataID__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+        <label>Race Data ID</label>
+        <length>64</length>
+        <required>true</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
         <fullName>RacePosition__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>

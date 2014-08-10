@@ -7,7 +7,8 @@ global class Application
 					Driver__c.SObjectType, 
 					Season__c.SObjectType, 
 				  	Race__c.SObjectType, 
-				  	Contestant__c.SObjectType });	
+				  	Contestant__c.SObjectType,
+				  	RaceData__c.SObjectType });	
 
 	// Configure and create the SelectorFactory for this Application
 	public static final SelectorFactory Selector = 
@@ -17,7 +18,8 @@ global class Application
 					Race__c.SObjectType => RacesSelector.class,
 					Car__c.SObjectType => CarsSelector.class,
 					Driver__c.SObjectType => DriversSelector.class,
-					Contestant__c.SObjectType => ContestantsSelector.class });
+					Contestant__c.SObjectType => ContestantsSelector.class,
+					RaceData__c.SObjectType => RaceDataSelector.class });
 
 	// Configure and create the DomainFactory for this Application
 	public static final DomainFactory Domain = 
@@ -83,6 +85,14 @@ global class Application
 
 			// Construct Selector class and query by Id for the records
 			return newInstance(domainSObjectType).selectSObjectsById(recordIds);
+		}
+
+		public List<SObject> selectByRelationship(List<SObject> relatedRecords, SObjectField relationshipField)
+		{
+			Set<Id> relatedIds = new Set<Id>();
+			for(SObject relatedRecord : relatedRecords)
+				relatedIds.add((Id) relatedRecord.get(relationshipField));
+			return selectById(relatedIds);
 		}
 
 		@TestVisible

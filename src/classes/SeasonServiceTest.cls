@@ -14,10 +14,10 @@ private class SeasonServiceTest
 	@isTest static void testImportSeasons() 
 	{
 		SeasonService.importSeasons(TestData.asJSON());
-		System.assertEquals(1, Database.countQuery('select count() from Driver__c'));
+		System.assertEquals(8, Database.countQuery('select count() from Driver__c'));
 		System.assertEquals(1, Database.countQuery('select count() from Season__c'));
-		System.assertEquals(1, Database.countQuery('select count() from Race__c'));
-		System.assertEquals(1, Database.countQuery('select count() from Contestant__c'));
+		System.assertEquals(10, Database.countQuery('select count() from Race__c'));
+		System.assertEquals(80, Database.countQuery('select count() from Contestant__c'));
 	}	
 
 	@isTest static void testTemporary()

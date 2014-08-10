@@ -57,6 +57,7 @@
         <style>CustomLinks</style>
     </layoutSections>
     <relatedLists>
+        <customButtons>RaceAnalysis</customButtons>
         <fields>NAME</fields>
         <relatedList>Race__c.Season__c</relatedList>
     </relatedLists>

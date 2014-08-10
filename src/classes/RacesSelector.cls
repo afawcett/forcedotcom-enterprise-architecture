@@ -22,6 +22,7 @@ public class RacesSelector extends fflib_SObjectSelector
 		return new List<Schema.SObjectField> {
 			Race__c.Id,
 			Race__c.Name,
+			Race__c.Year__c,
 			Race__c.Status__c,
 			Race__c.Season__c,
 			Race__c.FastestLapBy__c,

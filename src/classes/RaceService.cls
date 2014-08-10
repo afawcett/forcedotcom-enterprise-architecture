@@ -20,6 +20,21 @@ public class RaceService
 		return service().generateSummaryAsCSV_x(raceIds);
 	}
 
+	public static List<AnalysisResult> analizeData(Set<String> raceNames)
+	{
+		return service().analizeData_x(raceNames);
+	}
+
+	public static void processData(Set<Id> raceDataIds)
+	{
+		service().processData_x(raceDataIds);
+	}
+
+	public static void runProcessDataJob()
+	{
+		service().runProcessDataJob_x();	
+	}
+
 	private static IRaceService service()
 	{
 		if(ApexPages.currentPage()!=null)
@@ -37,6 +52,12 @@ public class RaceService
 		void awardChampionshipPoints_x(Set<Id> raceIds);
 
 		String generateSummaryAsCSV_x(Set<Id> raceIds);
+
+		List<AnalysisResult> analizeData_x(Set<String> raceNames);
+
+		void processData_x(Set<Id> raceDataIds);
+
+		Id runProcessDataJob_x();
 	}	
 
 	private class DummyImplementation implements IRaceService
@@ -68,6 +89,20 @@ public class RaceService
 		}
 
 		public String generateSummaryAsCSV_x(Set<Id> raceIds)
+		{
+			return null;
+		}
+
+		public List<AnalysisResult> analizeData_x(Set<String> raceNames)
+		{
+			return null;
+		}
+
+		public void processData_x(Set<Id> raceDataIds)
+		{
+		}
+
+		public Id runProcessDataJob_x()
 		{
 			return null;
 		}
@@ -122,6 +157,46 @@ public class RaceService
 							} , ',') + '\r\n';
 			return csvOutput;
 		}		
+
+		public List<AnalysisResult> analizeData_x(Set<String> raceNames)
+		{
+			List<RaceData__c> raceData = 
+				RaceDataSelector.newInstance().selectByRaceName(raceNames);			
+			return null;
+		}	
+
+		public void processData_x(Set<Id> raceDataIds)
+		{
+			// Query Race Data records and update with Contestant relationship
+			fflib_SObjectUnitOfWork uow = Application.UnitOfWork.newInstance();
+			for(RaceData__c raceData : 
+					(List<RaceData__c>)
+						Application.Selector.selectById(raceDataIds))
+			{
+				// Associate Race Data record with a Contestant via Unique Id
+				raceData.Contestant__r = 
+					new Contestant__c(
+						RaceDataId__c = 
+							Contestants.makeRaceDataId(
+								raceData.Year__c, 
+								raceData.RaceName__c, 
+								raceData.DriverId__c));
+				uow.registerDirty(raceData);
+			}
+			// Update records
+			uow.commitWork();
+		}
+
+		public Id runProcessDataJob_x()
+		{
+			// TODO: Implement concurrency check and scope config (via custom setting)
+			return Database.executeBatch(new ProcessRaceDataJob(), 2000);	
+		}		
+	}
+
+	public class AnalysisResult 
+	{
+
 	}
 
 	public class ProvisionalResult
