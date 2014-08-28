@@ -1,220 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>FormulaForce</fullName>
-    <apiAccessLevel>Unrestricted</apiAccessLevel>
-    <namespacePrefix>andybook2</namespacePrefix>
     <types>
-        <members>Application</members>
-        <members>ApplicationUnitOfWork</members>
-        <members>Cars</members>
-        <members>CarsSelector</members>
-        <members>ComplianceController</members>
-        <members>ComplianceResource</members>
-        <members>ComplianceResource_v1_0</members>
-        <members>ComplianceService</members>
-        <members>ComplianceServiceTest</members>
-        <members>ContestantController</members>
-        <members>ContestantControllerTest</members>
-        <members>ContestantService</members>
-        <members>ContestantServiceTest</members>
-        <members>Contestants</members>
-        <members>ContestantsSelector</members>
-        <members>ContestantsTest</members>
-        <members>Drivers</members>
-        <members>DriversSelector</members>
-        <members>FLSDemoController</members>
-        <members>LogService</members>
-        <members>NotificationService</members>
-        <members>OutOfRaceController</members>
-        <members>ProcessRaceDataJob</members>
-        <members>RaceAnalysisController</members>
-        <members>RaceController</members>
-        <members>RaceControllerTest</members>
-        <members>RaceDataSelector</members>
-        <members>RaceResultsController</members>
-        <members>RaceService</members>
-        <members>RaceServiceTest</members>
-        <members>RaceSummaryController</members>
-        <members>RaceSummaryControllerTest</members>
-        <members>Races</members>
-        <members>RacesSelector</members>
-        <members>SeasonController</members>
-        <members>SeasonControllerTest</members>
-        <members>SeasonNewsletterScheduler</members>
-        <members>SeasonNewsletterSchedulerTest</members>
-        <members>SeasonService</members>
-        <members>SeasonServiceTest</members>
-        <members>Seasons</members>
-        <members>Teams</members>
-        <members>TeamsSelector</members>
-        <members>TestData</members>
-        <members>fflib_QueryFactory</members>
-        <members>fflib_QueryFactoryTest</members>
-        <members>fflib_SObjectDescribe</members>
-        <members>fflib_SObjectDescribeTest</members>
-        <members>fflib_SObjectDomain</members>
-        <members>fflib_SObjectDomainTest</members>
-        <members>fflib_SObjectSelector</members>
-        <members>fflib_SObjectSelectorTest</members>
-        <members>fflib_SObjectUnitOfWork</members>
-        <members>fflib_SObjectUnitOfWorkTest</members>
-        <members>fflib_SecurityUtils</members>
-        <members>fflib_SecurityUtilsTest</members>
-        <members>fflib_StringBuilder</members>
-        <members>fflib_StringBuilderTest</members>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>compliancecar</members>
-        <members>compliancedriver</members>
-        <members>complianceteam</members>
-        <members>flsdemo</members>
-        <members>outofrace</members>
-        <members>raceanalysis</members>
-        <members>racesummary</members>
-        <members>racesummaryascsv</members>
+        <members>*</members>
         <name>ApexPage</name>
     </types>
     <types>
-        <members>Contestants</members>
-        <members>Drivers</members>
-        <members>Races</members>
-        <members>Seasons</members>
+        <members>*</members>
         <name>ApexTrigger</name>
     </types>
     <types>
-        <members>RaceAnalytics</members>
-        <members>RaceManagement</members>
+        <members>*</members>
         <name>CustomApplication</name>
-    </types>
-    <types>
-        <members>Application__c.IAwardChampionshipPointsApexClass__c</members>
-        <members>Car__c.Weight__c</members>
-        <members>ChampionshipPoints__c.PointsAwarded__c</members>
-        <members>Contestant__c.Car__c</members>
-        <members>Contestant__c.ChampionshipPoints__c</members>
-        <members>Contestant__c.DNF__c</members>
-        <members>Contestant__c.DriverRace__c</members>
-        <members>Contestant__c.Driver__c</members>
-        <members>Contestant__c.GridPosition__c</members>
-        <members>Contestant__c.Qualification1LapTime__c</members>
-        <members>Contestant__c.Qualification2LapTime__c</members>
-        <members>Contestant__c.Qualification3LapTime__c</members>
-        <members>Contestant__c.RaceDataID__c</members>
-        <members>Contestant__c.RacePosition__c</members>
-        <members>Contestant__c.RaceTime__c</members>
-        <members>Contestant__c.Race__c</members>
-        <members>Contestant__c.RetirementReason__c</members>
-        <members>Driver__c.Active__c</members>
-        <members>Driver__c.DriverId__c</members>
-        <members>Driver__c.FIASuperLicense__c</members>
-        <members>Driver__c.Nationality__c</members>
-        <members>Driver__c.ShortName__c</members>
-        <members>Driver__c.Team__c</members>
-        <members>Driver__c.TwitterHandle__c</members>
-        <members>RaceData__c.Contestant__c</members>
-        <members>RaceData__c.DriverId__c</members>
-        <members>RaceData__c.Lap__c</members>
-        <members>RaceData__c.RaceName__c</members>
-        <members>RaceData__c.Race__c</members>
-        <members>RaceData__c.Sector__c</members>
-        <members>RaceData__c.Type__c</members>
-        <members>RaceData__c.Value__c</members>
-        <members>RaceData__c.Year__c</members>
-        <members>Race__c.FastestLapBy__c</members>
-        <members>Race__c.PollPositionLapTime__c</members>
-        <members>Race__c.Season__c</members>
-        <members>Race__c.Status__c</members>
-        <members>Race__c.TotalDNFs__c</members>
-        <members>Race__c.Year__c</members>
-        <members>Season__c.Current__c</members>
-        <members>Season__c.Year__c</members>
-        <members>Team__c.TestingDistance__c</members>
-        <members>TrackLapRecords__c.DriverName_c__c</members>
-        <members>TrackLapRecords__c.Time__c</members>
-        <members>TrackLapRecords__c.Year__c</members>
-        <name>CustomField</name>
-    </types>
-    <types>
-        <members>ComplianceFailuresFound</members>
-        <members>NotImplemented</members>
-        <members>UnableToVerifyCompliance</members>
-        <members>fflib_security_error_field_not_insertable</members>
-        <members>fflib_security_error_field_not_readable</members>
-        <members>fflib_security_error_field_not_updateable</members>
-        <members>fflib_security_error_object_not_deletable</members>
-        <members>fflib_security_error_object_not_insertable</members>
-        <members>fflib_security_error_object_not_readable</members>
-        <members>fflib_security_error_object_not_updateable</members>
-        <name>CustomLabel</name>
     </types>
     <types>
         <members>CustomLabels</members>
         <name>CustomLabels</name>
     </types>
     <types>
-        <members>Application__c</members>
-        <members>Car__c</members>
-        <members>ChampionshipPoints__c</members>
-        <members>Contestant__c</members>
-        <members>Driver__c</members>
-        <members>RaceData__c</members>
-        <members>Race__c</members>
-        <members>Season__c</members>
-        <members>Team__c</members>
-        <members>TrackLapRecords__c</members>
+        <members>*</members>
         <name>CustomObject</name>
     </types>
     <types>
-        <members>Car__c</members>
-        <members>Driver__c</members>
-        <members>RaceData__c</members>
-        <members>Race__c</members>
-        <members>Season__c</members>
-        <members>Team__c</members>
+        <members>*</members>
         <name>CustomTab</name>
     </types>
     <types>
-        <members>Race__c.SeasonOverview</members>
-        <name>FieldSet</name>
-    </types>
-    <types>
-        <members>Car__c-Car Layout</members>
-        <members>Contestant__c-Contestant Layout</members>
-        <members>Driver__c-Driver Layout</members>
-        <members>RaceData__c-Race Data Layout</members>
-        <members>Race__c-Race Layout</members>
-        <members>Season__c-Season Layout</members>
-        <members>Team__c-Team Layout</members>
+        <members>*</members>
         <name>Layout</name>
     </types>
     <types>
-        <members>Car__c.All</members>
-        <members>Driver__c.All</members>
-        <members>RaceData__c.All</members>
-        <members>Race__c.All</members>
-        <members>Season__c.All</members>
-        <members>Team__c.All</members>
-        <name>ListView</name>
-    </types>
-    <types>
-        <members>FormulaForceRaceAnalytics</members>
-        <members>FormulaForceRaceManagement</members>
-        <members>FormulaForceRaceManagementUpdateDNFStatus</members>
+        <members>*</members>
         <name>PermissionSet</name>
     </types>
     <types>
-        <members>Contestant__c.OutOfRace</members>
+        <members>*</members>
         <name>QuickAction</name>
-    </types>
-    <types>
-        <members>Car__c.VerifyCompliance</members>
-        <members>Contestant__c.OutOfRace</members>
-        <members>Driver__c.VerifyCompliance</members>
-        <members>Race__c.DownloadSummary</members>
-        <members>Race__c.RaceAnalysis</members>
-        <members>Team__c.VerifyCompliance</members>
-        <name>WebLink</name>
     </types>
     <version>30.0</version>
 </Package>
