@@ -5,7 +5,6 @@
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>DriverName_c__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Driver Name</label>
         <length>60</length>
@@ -16,7 +15,6 @@
     </fields>
     <fields>
         <fullName>Time__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Time</label>
         <precision>8</precision>
@@ -28,7 +26,6 @@
     </fields>
     <fields>
         <fullName>Year__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Year</label>
         <length>4</length>
