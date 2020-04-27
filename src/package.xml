@@ -1,87 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>ContestantController</members>
-        <members>ContestantControllerTest</members>
-        <members>ContestantService</members>
-        <members>ContestantServiceTest</members>
-        <members>RaceController</members>
-        <members>RaceControllerTest</members>
-        <members>RaceService</members>
-        <members>RaceServiceTest</members>
-        <members>SeasonController</members>
-        <members>SeasonControllerTest</members>
-        <members>SeasonNewsletterScheduler</members>
-        <members>SeasonNewsletterSchedulerTest</members>
-        <members>SeasonService</members>
-        <members>SeasonServiceTest</members>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>RaceAnalytics</members>
-        <members>RaceManagement</members>
+        <members>*</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>CustomApplication</name>
     </types>
     <types>
-        <members>Contestant__c.DNF__c</members>
-        <members>Contestant__c.Driver__c</members>
-        <members>Contestant__c.Qualification1LapTime__c</members>
-        <members>Contestant__c.Qualification2LapTime__c</members>
-        <members>Contestant__c.Qualification3LapTime__c</members>
-        <members>Contestant__c.Race__c</members>
-        <members>Driver__c.Active__c</members>
-        <members>Driver__c.Nationality__c</members>
-        <members>Driver__c.TwitterHandle__c</members>
-        <members>RaceData__c.Race__c</members>
-        <members>Race__c.FastestLapBy__c</members>
-        <members>Race__c.PollPositionLapTime__c</members>
-        <members>Race__c.Season__c</members>
-        <members>Race__c.TotalDNFs__c</members>
-        <members>Season__c.Year__c</members>
-        <members>TrackLapRecords__c.DriverName_c__c</members>
-        <members>TrackLapRecords__c.Time__c</members>
-        <members>TrackLapRecords__c.Year__c</members>
-        <name>CustomField</name>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
     </types>
     <types>
-        <members>Contestant__c</members>
-        <members>Driver__c</members>
-        <members>RaceData__c</members>
-        <members>Race__c</members>
-        <members>Season__c</members>
-        <members>TrackLapRecords__c</members>
+        <members>*</members>
         <name>CustomObject</name>
     </types>
     <types>
-        <members>Driver__c</members>
-        <members>RaceData__c</members>
-        <members>Race__c</members>
-        <members>Season__c</members>
+        <members>*</members>
         <name>CustomTab</name>
     </types>
     <types>
-        <members>Contestant__c-Contestant Layout</members>
-        <members>Driver__c-Driver Layout</members>
-        <members>RaceData__c-Race Data Layout</members>
-        <members>Race__c-Race Layout</members>
-        <members>Season__c-Season Layout</members>
+        <members>*</members>
         <name>Layout</name>
     </types>
     <types>
-        <members>Driver__c.All</members>
-        <members>RaceData__c.All</members>
-        <members>Race__c.All</members>
-        <members>Season__c.All</members>
-        <name>ListView</name>
-    </types>
-    <types>
-        <members>FormulaForceRaceAnalytics</members>
-        <members>FormulaForceRaceManagement</members>
-        <members>FormulaForceRaceManagementUpdateDNFStatus</members>
+        <members>*</members>
         <name>PermissionSet</name>
     </types>
     <types>
-        <members>Contestant__c.OutOfRace</members>
+        <members>*</members>
         <name>QuickAction</name>
     </types>
     <version>30.0</version>

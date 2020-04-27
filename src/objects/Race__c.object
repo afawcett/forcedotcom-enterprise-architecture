@@ -51,6 +51,11 @@
     <enableFeeds>true</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
+    <fieldSets>
+        <fullName>SeasonOverview</fullName>
+        <description>Used by the Season Overview page</description>
+        <label>Season Overview</label>
+    </fieldSets>
     <fields>
         <fullName>FastestLapBy__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -67,6 +72,7 @@
     </fields>
     <fields>
         <fullName>PollPositionLapTime__c</fullName>
+        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Poll Position Lap Time</label>
         <summarizedField>Contestant__c.Qualification1LapTime__c</summarizedField>
@@ -91,6 +97,34 @@
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
     <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Scheduled</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Red Flagged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finished</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
         <fullName>TotalDNFs__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -104,6 +138,17 @@
         <summaryOperation>count</summaryOperation>
         <trackTrending>false</trackTrending>
         <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>Season__r.Year__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Year</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
     </fields>
     <label>Race</label>
     <listViews>
@@ -119,4 +164,27 @@
     <pluralLabel>Races</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>DownloadSummary</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Download Summary</masterLabel>
+        <openType>sidebar</openType>
+        <page>racesummaryascsv</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>RaceAnalysis</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Race Analysis</masterLabel>
+        <openType>noSidebar</openType>
+        <page>raceanalysis</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
 </CustomObject>
