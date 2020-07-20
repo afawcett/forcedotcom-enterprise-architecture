@@ -1,23 +1,13 @@
 public with sharing class RaceController 
 {
-	private ApexPages.StandardController standardController;
-
-    public RaceController(ApexPages.StandardController standardController) 
+    public RaceController(ApexPages.StandardController stdController) 
     {        
-    	this.standardController = standardController;
     }
 
     public PageReference awardPoints()
     {
-    	try 
-    	{
-    		RaceService.awardChampionshipPoints(
-    			new Set<Id> { standardController.getId() });
-    	}
-    	catch (Exception e)
-    	{
-    		ApexPages.addMessages(e);
-    	}                
+        RaceService.awardChampionshipPoints(null);
+        
         return null;
     }
 }

@@ -52,33 +52,6 @@
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
     <fields>
-        <fullName>Car__c</fullName>
-        <deleteConstraint>Restrict</deleteConstraint>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Car</label>
-        <referenceTo>Car__c</referenceTo>
-        <relationshipLabel>Contestants</relationshipLabel>
-        <relationshipName>Contestants</relationshipName>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>ChampionshipPoints__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Championship Points</label>
-        <precision>5</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>DNF__c</fullName>
         <defaultValue>false</defaultValue>
         <deprecated>false</deprecated>
@@ -87,18 +60,6 @@
         <trackFeedHistory>false</trackFeedHistory>
         <trackTrending>false</trackTrending>
         <type>Checkbox</type>
-    </fields>
-    <fields>
-        <fullName>DriverRace__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <formula>Driver__r.Name + &apos; (&apos; + Race__r.Name + &apos;)&apos;</formula>
-        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-        <label>Driver and Race</label>
-        <required>false</required>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Driver__c</fullName>
@@ -126,21 +87,7 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>GridPosition__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Grid Position</label>
-        <precision>2</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Qualification1LapTime__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Qualification 1 Lap Time</label>
         <precision>9</precision>
@@ -153,7 +100,6 @@
     </fields>
     <fields>
         <fullName>Qualification2LapTime__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Qualification 2 Lap Time</label>
         <precision>9</precision>
@@ -166,47 +112,8 @@
     </fields>
     <fields>
         <fullName>Qualification3LapTime__c</fullName>
-        <deprecated>false</deprecated>
         <externalId>false</externalId>
         <label>Qualification 3 Lap Time</label>
-        <precision>9</precision>
-        <required>false</required>
-        <scale>3</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>RaceDataID__c</fullName>
-        <caseSensitive>false</caseSensitive>
-        <externalId>true</externalId>
-        <label>Race Data ID</label>
-        <length>64</length>
-        <required>true</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
-    <fields>
-        <fullName>RacePosition__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Race Position</label>
-        <precision>2</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>RaceTime__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Race Time</label>
         <precision>9</precision>
         <required>false</required>
         <scale>3</scale>
@@ -230,16 +137,6 @@
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
     </fields>
-    <fields>
-        <fullName>RetirementReason__c</fullName>
-        <deprecated>false</deprecated>
-        <externalId>false</externalId>
-        <label>Retirement Reason</label>
-        <required>false</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackTrending>false</trackTrending>
-        <type>TextArea</type>
-    </fields>
     <label>Contestant</label>
     <nameField>
         <displayFormat>CONTESTANT-{00000000}</displayFormat>
@@ -250,16 +147,4 @@
     <pluralLabel>Contestants</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
-    <webLinks>
-        <fullName>OutOfRace</fullName>
-        <availability>online</availability>
-        <displayType>massActionButton</displayType>
-        <height>600</height>
-        <linkType>page</linkType>
-        <masterLabel>Out of Race</masterLabel>
-        <openType>sidebar</openType>
-        <page>outofrace</page>
-        <protected>false</protected>
-        <requireRowSelection>true</requireRowSelection>
-    </webLinks>
 </CustomObject>
